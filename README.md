@@ -104,9 +104,6 @@ You can deploy this project using:
 - Twitter: [@anas599](https://twitter.com/anas599)
 - LinkedIn: [anas1993](https://linkedin.com/in/anas1993)
 
-👤 **Sajib Arafat Siddiqui**
-- GitHub: [@sajibarafatsiddiqui](https://github.com/sajibarafatsiddiqui)
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
