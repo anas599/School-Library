@@ -3,7 +3,6 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -39,16 +38,6 @@ PostgresSQL
 
 
 - School-Library
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-- [N/A]()
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -96,7 +85,7 @@ rspec
 
 You can deploy this project using:
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>## 👥 Authors <a name="authors"></a>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>👥 Authors <a name="authors"></a>
 
 👤 **ANAS ALSAMMARRAIE**
 
