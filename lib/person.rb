@@ -40,18 +40,19 @@ end
 
 class CapitalizeDecorator < BaseDecorator
   def correct_name
-    @nameable.correct_name.capitalize    
+    @nameable.correct_name.capitalize
   end
 end
+
 class TrimmerDecorator < BaseDecorator
   def correct_name
-    @nameable.correct_name.slice(0,10)    
+    @nameable.correct_name.slice(0, 10)
   end
 end
 
 person = Person.new(22, 'maximilianus')
-    person.correct_name
-    capitalizedPerson = CapitalizeDecorator.new(person)
-    capitalizedPerson.correct_name
-    capitalizedTrimmedPerson = TrimmerDecorator.new(capitalizedPerson)
-  p capitalizedTrimmedPerson.correct_name
+person.correct_name
+capitalized_person = CapitalizeDecorator.new(person)
+capitalized_person.correct_name
+capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
+p capitalized_trimmed_person.correct_name
