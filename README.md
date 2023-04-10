@@ -38,13 +38,6 @@ PostgresSQL
 
 
 - School-Library
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -92,7 +85,7 @@ rspec
 
 You can deploy this project using:
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>## 👥 Authors <a name="authors"></a>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>👥 Authors <a name="authors"></a>
 
 👤 **ANAS ALSAMMARRAIE**
 
