@@ -1,6 +1,6 @@
 class Rental
+    attr_accessor :date
   def initialize(date)
     @date = date
-    attr_accessor :date
   end
 end
