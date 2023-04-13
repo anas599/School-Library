@@ -50,16 +50,16 @@ PostgresSQL
 In order to run this project you need:
 
 Ruby installed
-  <br>
-run Ruby main.rb
+  run Ruby main.rb
+
 
 ### Setup
 
 Clone this repository to your desired folder:
   cd School-Library
 
-    <br>
-  git clone git@github.com:anas599/School-Library.git
+    git clone git@github.com:anas599/School-Library.git
+  
 
 ### Install
 
