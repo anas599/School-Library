@@ -66,8 +66,8 @@ Clone this repository to your desired folder:
 Install this project with:
 
   cd School-Library
-  <br>
   ruby main.rb
+  
 
 
 ### Usage
