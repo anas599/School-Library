@@ -16,7 +16,7 @@ class App
       when 4 then create_book_menu
       when 5 then create_rental_menu
       when 6 then list_rentals_for_person_menu
-      when 7 then exit_program and break
+      when 7 then exit_program
       else puts 'Invalid choice. Please try again.'
       end
     end
@@ -108,7 +108,8 @@ class App
   end
 
   def exit_program
-    puts 'Goodbye!'
+    puts 'Thank you for using this app!'
+    exit
   end
 end
 
