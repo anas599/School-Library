@@ -13,6 +13,3 @@ class Classroom
     student.classroom = self
   end
 end
-math_classroom = Classroom.new('Math')
-john = Student.new(math_classroom, 10, 'John')
-p math_classroom.add_student(john)
