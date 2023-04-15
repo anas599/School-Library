@@ -6,8 +6,5 @@ class Rental
     @person = person
     @book = book
     @return_date = nil
-
-    book.rentals << self
-    person.rentals << self
   end
 end
