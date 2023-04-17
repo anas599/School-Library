@@ -4,7 +4,6 @@ class App
   def initialize
     @library = Library.new
   end
-
   def main # rubocop:todo Metrics/CyclomaticComplexity
     puts 'Welcome to the Library!'
     loop do
