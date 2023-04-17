@@ -4,7 +4,6 @@ require_relative './methods/create_person_menu'
 require_relative './methods/create_rental'
 require_relative './methods/list_rentals_for_person'
 
-
 class App
   def initialize
     @library = Library.new
