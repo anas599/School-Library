@@ -93,6 +93,18 @@ You can deploy this project using:
 - Twitter: [@anas599](https://twitter.com/anas599)
 - LinkedIn: [anas1993](https://linkedin.com/in/anas1993)
 
+👤 **Vanessa Oliveros Padron**
+
+- GitHub: [@vvoo21](https://github.com/vvoo21)
+- Twitter: [@vaneoliverosp](https://twitter.com/vaneoliverosp)
+- LinkedIn: [vaneoliverosp](https://www.linkedin.com/in/vaneoliverosp/)
+
+👤 **Biruk Bereka**
+
+- GitHub: [@Biruk-Bereka](https://github.com/biruk-bereka)
+- LinkedIn: [Biruk Bereka](https://www.linkedin.com/in/biruk-bereka1212/)
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 

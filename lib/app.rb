@@ -13,6 +13,7 @@ class Library
     @books = []
     @classrooms = []
     @person = []
+    @rentals = []
   end
 
   def add_person(person)
@@ -28,7 +29,10 @@ class Library
   end
 
   def add_rental(book, person, date)
-    Rental.new(date, person, book)
+    rental = Rental.new(date, person, book)
+    @rentals << rental
+    person.rentals << rental
+    book.rentals << rental
   end
 
   def list_books
