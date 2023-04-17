@@ -1,5 +1,7 @@
 require_relative 'app'
 require_relative './methods/create_book_menu'
+require_relative './methods/create_person_menu'
+
 
 class App
   def initialize
@@ -13,7 +15,7 @@ class App
       case gets.chomp.to_i
       when 1 then @library.list_books
       when 2 then @library.list_person
-      when 3 then create_person_menu
+      when 3 then CreatePersonMenu.new(@library).call
       when 4 then CreateBookMenu.new(@library).call
       when 5 then create_rental_menu
       when 6 then list_rentals_for_person_menu
@@ -35,58 +37,6 @@ class App
     puts '6. List all rentals for a given person id'
     puts '7. Exit'
   end
-
-  def create_person_menu
-    loop do
-      puts 'Do you want to create a Student?(1) or a Teacher?(2) [input number]'
-      choice = gets.chomp.to_i
-
-      case choice
-      when 1
-        create_student
-        break
-      when 2
-        create_teacher
-        break
-      else
-        puts 'Invalid choice. Please try again.'
-      end
-    end
-  end
-
-  def create_student
-    puts 'Enter student name:'
-    name = gets.chomp
-    puts 'Enter student age:'
-    age = gets.chomp.to_i
-    puts 'Has student permission? [Y/N]'
-    permission = gets.chomp.downcase == 'y'
-    student = Student.new(age, permission, name)
-    @library.add_person(student)
-    puts 'Student added!'
-  end
-
-  def create_teacher
-    puts 'Enter teacher name:'
-    name = gets.chomp
-    puts 'Enter teacher age:'
-    age = gets.chomp.to_i
-    puts 'Has teacher permission? [Y/N]'
-    permission = gets.chomp.downcase == 'y'
-    teacher = Teacher.new(age, permission, name)
-    @library.add_person(teacher)
-    puts 'Teacher added!'
-  end
-
-  # def create_book_menu
-  #   puts 'Enter book title:'
-  #   title = gets.chomp
-  #   puts 'Enter book author:'
-  #   author = gets.chomp
-  #   book = Book.new(title, author)
-  #   @library.add_book(book)
-  #   puts 'Book added!'
-  # end
 
   def create_rental_menu
     puts 'Select a book from the following list by number:'

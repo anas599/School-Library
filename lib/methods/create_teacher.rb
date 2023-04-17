@@ -1,5 +1,5 @@
-require_relative 'person'
-require_relative 'library'
+require_relative '../person'
+require_relative '../app'
 
 class CreateTeacher
   def initialize(library)
