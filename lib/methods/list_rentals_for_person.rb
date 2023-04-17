@@ -1,11 +1,11 @@
-require_relative 'library'
+require_relative '../app'
 
 class ListRentalsForPerson
   def initialize(library)
     @library = library
   end
 
-  def run
+  def call
     puts 'Enter the ID of the person:'
     id = gets.chomp.to_i
     puts 'Rentals:'

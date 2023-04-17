@@ -2,6 +2,8 @@ require_relative 'app'
 require_relative './methods/create_book_menu'
 require_relative './methods/create_person_menu'
 require_relative './methods/create_rental'
+require_relative './methods/list_rentals_for_person'
+
 
 class App
   def initialize
@@ -18,7 +20,7 @@ class App
       when 3 then CreatePersonMenu.new(@library).call
       when 4 then CreateBookMenu.new(@library).call
       when 5 then CreateRentalMenu.new(@library).call
-      when 6 then list_rentals_for_person_menu
+      when 6 then ListRentalsForPerson.new(@library).call
       when 7 then exit_program
       else puts 'Invalid choice. Please try again.'
       end
@@ -36,13 +38,6 @@ class App
     puts '5. Create a rental'
     puts '6. List all rentals for a given person id'
     puts '7. Exit'
-  end
-
-  def list_rentals_for_person_menu
-    puts 'Enter the ID of the person:'
-    id = gets.chomp.to_i
-    puts 'Rentals:'
-    @library.list_rentals_for_person(id)
   end
 
   def exit_program
