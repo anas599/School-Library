@@ -1,3 +1,5 @@
+require_relative '../book'
+
 class CreateBookMenu
   def initialize(library)
     @library = library

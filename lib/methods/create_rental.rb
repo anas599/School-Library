@@ -1,4 +1,4 @@
-require_relative 'library'
+require_relative '../app'
 
 class CreateRentalMenu
   def initialize(library)
@@ -11,17 +11,16 @@ class CreateRentalMenu
     book_index = gets.chomp.to_i - 1
 
     puts 'Select a person from the following list by number:'
-    @library.list_people
+    @library.list_person
     person_index = gets.chomp.to_i - 1
 
     puts 'Enter the rental date (in yyyy-mm-dd format):'
     rental_date = gets.chomp
 
     book = @library.books[book_index]
-    person = @library.people[person_index]
+    person = @library.person[person_index]
 
-    rental = Rental.new(rental_date, book, person)
-    @library.add_rental(rental)
+    @library.add_rental(book, person, rental_date)
 
     puts 'Rental created successfully!'
   end
