@@ -58,7 +58,9 @@ class App
     name = gets.chomp
     puts 'Enter student age:'
     age = gets.chomp.to_i
-    student = Student.new(age, name, parent_permission: true)
+    puts 'Has student permission? [Y/N]'
+    permission = gets.chomp.downcase == 'y'
+    student = Student.new(age, permission, name)
     @library.add_person(student)
     puts 'Student added!'
   end
@@ -68,9 +70,9 @@ class App
     name = gets.chomp
     puts 'Enter teacher age:'
     age = gets.chomp.to_i
-    puts 'Enter teacher specialty:'
-    specialty = gets.chomp
-    teacher = Teacher.new(name, age, specialty)
+    puts 'Has teacher permission? [Y/N]'
+    permission = gets.chomp.downcase == 'y'
+    teacher = Teacher.new(age, permission, name)
     @library.add_person(teacher)
     puts 'Teacher added!'
   end
