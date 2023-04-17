@@ -1,4 +1,5 @@
 require_relative 'app'
+require_relative './methods/create_book_menu'
 
 class App
   def initialize
@@ -13,7 +14,7 @@ class App
       when 1 then @library.list_books
       when 2 then @library.list_person
       when 3 then create_person_menu
-      when 4 then create_book_menu
+      when 4 then CreateBookMenu.new(@library).call
       when 5 then create_rental_menu
       when 6 then list_rentals_for_person_menu
       when 7 then exit_program
@@ -77,15 +78,15 @@ class App
     puts 'Teacher added!'
   end
 
-  def create_book_menu
-    puts 'Enter book title:'
-    title = gets.chomp
-    puts 'Enter book author:'
-    author = gets.chomp
-    book = Book.new(title, author)
-    @library.add_book(book)
-    puts 'Book added!'
-  end
+  # def create_book_menu
+  #   puts 'Enter book title:'
+  #   title = gets.chomp
+  #   puts 'Enter book author:'
+  #   author = gets.chomp
+  #   book = Book.new(title, author)
+  #   @library.add_book(book)
+  #   puts 'Book added!'
+  # end
 
   def create_rental_menu
     puts 'Select a book from the following list by number:'
