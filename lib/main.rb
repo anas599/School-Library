@@ -8,7 +8,9 @@ class App
   def initialize
     @library = Library.new
   end
-  def main # rubocop:todo Metrics/CyclomaticComplexity
+
+  # rubocop:disable Metrics/CyclomaticComplexity
+  def main
     puts 'Welcome to the Library!'
     loop do
       display_options
@@ -24,6 +26,7 @@ class App
       end
     end
   end
+  # rubocop:enable Metrics/CyclomaticComplexity
 
   private
 
