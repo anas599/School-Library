@@ -8,7 +8,6 @@ class App
   def initialize
     @library = Library.new
   end
-
   # rubocop:disable Metrics/CyclomaticComplexity
   def main
     puts 'Welcome to the Library!'
