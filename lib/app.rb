@@ -9,7 +9,7 @@ require 'json'
 
 
 class Library
-  attr_accessor :books, :classrooms, :person
+  attr_accessor :books, :classrooms, :person, :rentals
 
   def initialize
     @books = []
