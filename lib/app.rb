@@ -11,21 +11,13 @@ require 'json'
 class Library
   attr_accessor :books, :classrooms, :person
 
-def initialize
+  def initialize
     @books = []
     @classrooms = []
     @person = []
     @rentals = []
-    
-    # Load books from JSON file
-    json_file = File.read('books.json')
-    books_data = JSON.parse(json_file)
-    books_data.each do |book_data|
-      #find a way toadd an if so if file is empty it will go to empty array
-      book = Book.new(book_data['title'], book_data['author'])
-      @books << book
-    end
   end
+
   def add_person(person)
     @person << person
   end

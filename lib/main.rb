@@ -3,10 +3,13 @@ require_relative './methods/create_book_menu'
 require_relative './methods/create_person_menu'
 require_relative './methods/create_rental'
 require_relative './methods/list_rentals_for_person'
+require_relative './save'
 
 class App
   def initialize
     @library = Library.new
+    s = Save.new
+    s.read_books(@library)
   end
 
   # rubocop:disable Metrics/CyclomaticComplexity
@@ -42,6 +45,8 @@ class App
   end
 
   def exit_program
+    s = Save.new
+    s.save_books(@library)
     puts 'Thank you for using this app!'
     exit
   end
