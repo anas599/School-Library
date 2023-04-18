@@ -15,4 +15,13 @@ class Book
     self.available = false
     rental
   end
+
+  def to_json(*args)
+    {
+      title: @title,
+      author: @author,
+      rentals: @rentals,
+      available: @available
+    }.to_json(*args)
+  end
 end

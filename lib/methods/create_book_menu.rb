@@ -1,4 +1,5 @@
 require_relative '../book'
+require 'json'
 
 class CreateBookMenu
   def initialize(library)
@@ -13,5 +14,14 @@ class CreateBookMenu
     book = Book.new(title, author)
     @library.add_book(book)
     puts 'Book added!'
+
+    if File.exist?('./books.json') && !File.empty?('./books.json')
+      json_data = File.read('./books.json')
+      books = JSON.parse(json_data)
+    else
+      books = []
+    end
+    books << book
+    File.write('./books.json', books.to_json)
   end
 end
