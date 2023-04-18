@@ -26,6 +26,39 @@ class Save
     File.write('./books.json', books.to_json)
   end
 
+  def save_person(library)
+    persons = []
+    library.person.each do |person|
+      if person.instance_of?(::Student)
+        st = { name: person.name, age: person.age, permission: person.parent_permission, type: person.class }
+        persons.push(st)
+      else
+        teacher = { name: person.name, age: person.age, specialization: person.specialization, type: person.class }
+        persons.push(teacher)
+      end
+    end
+    File.new('people.json') unless File.exist?('people.json')
+    File.write('people.json', JSON.generate(persons), mode: 'a')
+  end
+
+  def read_person(library)
+    File.write('people.json', JSON.generate([])) unless File.exist?('people.json')
+    if File.exist?('./pepole.json') && !File.empty?('./people.json')
+      persons = JSON.parse(File.read('people.json'))
+      persons.each do |person|
+        if person['type'] == 'Student'
+          student = Student.new(person['age'], 'Math', person['name'], parent_permission: person['permission'])
+          library.person.push(student)
+        else
+          teacher = Teacher.new(person['specialization'], person['age'], person['name'])
+          library.person.push(teacher)
+        end
+      end
+    else
+      persons = []
+    end
+  end
+
   def save_rentals(library)
     rentals_arr = []
     library.rentals.each do |rental|

@@ -11,6 +11,7 @@ class App
     s = Save.new
     s.read_books(@library)
     s.read_rentals(@library)
+    s.read_person(@library)
   end
 
   # rubocop:disable Metrics/CyclomaticComplexity
@@ -48,6 +49,7 @@ class App
   def exit_program
     s = Save.new
     s.save_books(@library)
+    s.save_person(@library)
     s.save_rentals(@library)
     puts 'Thank you for using this app!'
     exit
