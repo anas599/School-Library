@@ -4,10 +4,9 @@ require_relative 'book'
 require_relative 'classroom'
 
 class Person < Nameable
-  @@id = 0
   def initialize(age, _parent_permission, name = 'Unknown')
     super()
-    @id = @@id += 1
+    @id = Random.rand(1..25)
     @name = name
     @age = age
     @parent_permission = true
