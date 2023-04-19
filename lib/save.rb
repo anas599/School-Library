@@ -53,7 +53,7 @@ class Save
         new_person = if person['type'] == 'Student'
                        Student.new(person['age'], person['name'], person['name'])
                      else
-                       Teacher.new(person['age'], person['name'], person['specialization'])
+                       Teacher.new(person['age'], person['name'], person['name'])
                      end
         library.person << new_person
       end
@@ -73,19 +73,20 @@ class Save
     File.write('rentals.json', JSON.generate(rentals_arr))
   end
 
-  def read_rentals(library)
-    File.write('rentals.json', JSON.generate([])) unless File.exist?('rentals.json')
+def read_rentals(library, file_path)
+  File.write('./rentals.json', JSON.generate([])) unless File.exist?('./rentals.json')
 
-    if File.exist?('./rentals.json') && !File.empty?('./rentals.json')
-      json_data = File.read('./rentals.json')
-      rentals = JSON.parse(json_data)
-      rentals.each do |rental|
-        new_rental = Rental.new(rental['rental_date'], library.books[rental['book']], library.person[rental['person']])
-        library.rentals << new_rental
-      end
-    else
-      rentals = []
+  if File.exist?('./rentals.json') && !File.empty?('./rentals.json')
+    json_data = File.read('./rentals.json')
+    rentals = JSON.parse(json_data)
+    rentals.each do |rental|
+    new_rental = Rental.new(rental['date'], library.books[rental['book'].to_i], library.person[rental['person']])
+      library.rentals << new_rental
     end
-    File.write('./rentals.json', JSON.generate(rentals))
+  else
+    rentals = []
   end
+  File.write(file_path, JSON.generate(rentals))
+end
+
 end
