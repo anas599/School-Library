@@ -110,7 +110,8 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 - includes Heights Reverse the coding
--  Add links for output of the text 
+-  Add links for output of the text
+- Create the options for the classrooms
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
