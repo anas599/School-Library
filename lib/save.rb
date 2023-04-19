@@ -67,26 +67,26 @@ class Save
     rentals_arr = []
     library.rentals.each do |rental|
       puts rental
-      rental = { book: rental.book.title, person: rental.person.name, date: rental.date }
+      rental = { date: rental.date, book: rental.book.title, person: rental.person.name }
       rentals_arr.push(rental)
     end
     File.write('rentals.json', JSON.generate(rentals_arr))
   end
 
-def read_rentals(library, file_path)
-  File.write('./rentals.json', JSON.generate([])) unless File.exist?('./rentals.json')
+  def read_rentals(library)
+    File.write('./rentals.json', JSON.generate([])) unless File.exist?('./rentals.json')
 
-  if File.exist?('./rentals.json') && !File.empty?('./rentals.json')
-    json_data = File.read('./rentals.json')
-    rentals = JSON.parse(json_data)
-    rentals.each do |rental|
-    new_rental = Rental.new(rental['date'], library.books[rental['book'].to_i], library.person[rental['person']])
-      library.rentals << new_rental
+    if File.exist?('./rentals.json') && !File.empty?('./rentals.json')
+      json_data = File.read('./rentals.json')
+      rentals = JSON.parse(json_data)
+      rentals.each do |rental|
+        new_rental = Rental.new(rental['date'], rental['book'], rental['person'])
+
+        library.rentals << new_rental
+      end
+    else
+      rentals = []
     end
-  else
-    rentals = []
+    File.write('./rentals.json', JSON.generate(rentals))
   end
-  File.write(file_path, JSON.generate(rentals))
-end
-
 end

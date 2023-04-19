@@ -4,8 +4,8 @@ require_relative 'book'
 require_relative 'classroom'
 
 class Person < Nameable
+  @@id = 0
   def initialize(age, _parent_permission, name = 'Unknown')
-    @@id = 0
     super()
     @id = @@id += 1
     @name = name
