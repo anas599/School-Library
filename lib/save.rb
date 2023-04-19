@@ -28,35 +28,39 @@ class Save
 
   def save_person(library)
     persons = []
+
+    persons = JSON.parse(File.read('people.json')) if File.exist?('people.json') && !File.empty?('people.json')
+
     library.person.each do |person|
       if person.instance_of?(::Student)
         st = { name: person.name, age: person.age, permission: person.parent_permission, type: person.class }
-        persons.push(st)
+        persons.push(st) unless persons.any? { |p| p['name'] == person.name && p['type'] == person.class.to_s }
       else
         teacher = { name: person.name, age: person.age, specialization: person.specialization, type: person.class }
-        persons.push(teacher)
+        persons.push(teacher) unless persons.any? { |p| p['name'] == person.name && p['type'] == person.class.to_s }
       end
     end
-    File.new('people.json') unless File.exist?('people.json')
-    File.write('people.json', JSON.generate(persons), mode: 'a')
+    File.write('people.json', JSON.generate(persons))
   end
 
   def read_person(library)
     File.write('people.json', JSON.generate([])) unless File.exist?('people.json')
-    if File.exist?('./pepole.json') && !File.empty?('./people.json')
-      persons = JSON.parse(File.read('people.json'))
+
+    if File.exist?('./people.json') && !File.empty?('./people.json')
+      json_data = File.read('./people.json')
+      persons = JSON.parse(json_data)
       persons.each do |person|
-        if person['type'] == 'Student'
-          student = Student.new(person['age'], 'Math', person['name'], parent_permission: person['permission'])
-          library.person.push(student)
-        else
-          teacher = Teacher.new(person['specialization'], person['age'], person['name'])
-          library.person.push(teacher)
-        end
+        new_person = if person['type'] == 'Student'
+                       Student.new(person['age'], person['name'], person['name'])
+                     else
+                       Teacher.new(person['age'], person['name'], person['specialization'])
+                     end
+        library.person << new_person
       end
     else
       persons = []
     end
+    File.write('./people.json', JSON.generate(persons))
   end
 
   def save_rentals(library)

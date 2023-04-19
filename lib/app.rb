@@ -7,7 +7,6 @@ require_relative 'student'
 require_relative 'teacher'
 require 'json'
 
-
 class Library
   attr_accessor :books, :classrooms, :person, :rentals
 
