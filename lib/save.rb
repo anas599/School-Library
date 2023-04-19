@@ -26,8 +26,8 @@ class Save
     File.write('./books.json', books.to_json)
   end
 
-  # rubocop:todo Metrics/PerceivedComplexity
-  def save_person(library) # rubocop:todo Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
+
+  def save_person(library) 
     persons = []
 
     persons = JSON.parse(File.read('people.json')) if File.exist?('people.json') && !File.empty?('people.json')
@@ -43,7 +43,6 @@ class Save
     end
     File.write('people.json', JSON.generate(persons))
   end
-  # rubocop:enable Metrics/PerceivedComplexity
 
   def read_person(library)
     File.write('people.json', JSON.generate([])) unless File.exist?('people.json')
