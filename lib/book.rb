@@ -16,13 +16,12 @@ class Book
     rental
   end
 
-  def return_book(person, date)
-    rental = @rentals.find { |r| r.person == person && r.return_date.nil? }
-    if rental
-      rental.return_date = date
-      self.available = true
-    else
-      puts 'Error: Book is not currently rented by this person.'
-    end
+  def to_json(*args)
+    {
+      title: @title,
+      author: @author,
+      rentals: @rentals,
+      available: @available
+    }.to_json(*args)
   end
 end
