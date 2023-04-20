@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative '../rental'
+require_relative '../lib/rental'
 
 describe Rental do
   let(:rental) { Rental.new('2023-04-20', 'Book', 'Person') }

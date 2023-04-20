@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative '../book'
+require_relative '../lib/book'
 require 'json'
 
 describe Book do

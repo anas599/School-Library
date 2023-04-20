@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative '../student'
+require_relative '../lib/student'
 
 describe Student do
   let(:student) { Student.new(18, 'Math', 'Hanna') }
