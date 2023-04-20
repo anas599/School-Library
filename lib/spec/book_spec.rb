@@ -27,4 +27,17 @@ describe Book do
       expect(book.rentals).to eq([])
     end
   end
+
+  describe "#to_json" do
+    it "returns a JSON representation of the book" do
+      expected_json = {
+        title: "title",
+        author: "author",
+        rentals: [],
+        available: true
+      }.to_json
+      expect(book.to_json).to eq(expected_json)
+    end
+  end
+  
 end
