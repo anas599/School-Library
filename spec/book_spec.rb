@@ -29,19 +29,18 @@ describe Book do
     end
   end
 
-  describe "#to_json" do
-    it "returns a JSON representation of the book" do
+  describe '#to_json' do
+    it 'returns a JSON representation of the book' do
       expected = {
         title: book.title,
         author: book.author,
         rentals: [],
         available: true
-      } 
+      }
 
       expected_json = expected.to_json
 
       expect(book.to_json).to eq(expected_json)
     end
   end
-  
 end
