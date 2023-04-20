@@ -1,5 +1,6 @@
 require 'rspec'
 require_relative '../book'
+require 'json'
 
 describe Book do
   let(:book) { Book.new('The Hobbit', 'J.R.R.') }
@@ -30,12 +31,15 @@ describe Book do
 
   describe "#to_json" do
     it "returns a JSON representation of the book" do
-      expected_json = {
-        title: "title",
-        author: "author",
+      expected = {
+        title: book.title,
+        author: book.author,
         rentals: [],
         available: true
-      }.to_json
+      } 
+
+      expected_json = expected.to_json
+
       expect(book.to_json).to eq(expected_json)
     end
   end
