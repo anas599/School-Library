@@ -1,12 +1,21 @@
 require 'rspec'
 require_relative '../lib/student'
+require_relative '../lib/classroom'
 
 describe Student do
-  let(:student) { Student.new(18, 'Math', 'Hanna') }
+  let(:classroom) { double('Classroom', students: []) }
+  let(:student) { Student.new(18, classroom, 'Hanna') }
 
   describe '#new' do
     it 'returns a Student object' do
       expect(student).to be_an_instance_of(Student)
+    end
+  end
+
+  describe '#classroom=' do
+    it 'adds the student to the classroom' do
+      student.classroom = classroom
+      expect(classroom.students).to include(student)
     end
   end
 
