@@ -23,16 +23,6 @@ class Person < Nameable
     rental
   end
 
-  def return_book(book, date)
-    rental = @rentals.find { |r| r.book == book && r.return_date.nil? }
-    if rental
-      rental.return_date = date
-      book.available = true
-    else
-      puts 'Error: Book is not currently rented by this person.'
-    end
-  end
-
   def can_use_services?
     of_age? || @parent_permission
   end
